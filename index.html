@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamix Vision Automation</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.x/dist/tabler-icons.min.css"/>
+</head>
+<body>
+
+<div class="site">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="images/logo.png" alt="Dynamix Logo" onerror="this.outerHTML='<span style=\'font-size:13px;font-weight:800;color:#fff;font-family:var(--font-cond);letter-spacing:1px\'>DYNAMIX</span>'"/>
+      </div>
+    </div>
+    <div class="nav-menu">
+      <a>Beranda</a><a>Layanan</a><a>Retrofit</a><a>Sparepart</a><a>Kontak</a>
+    </div>
+    <button class="nav-btn" onclick="window.open('https://wa.me/6289855551050?text=Halo%20Dynamix%2C%20saya%20ingin%20konsultasi%20gratis%20mengenai%20layanan%20CNC%20Anda.','_blank')">Konsultasi Gratis</button>
+  </nav>
+
+
+
+  <!-- ===== VIDEO / IMAGE SLIDESHOW ===== -->
+  <div class="vslide-wrap" id="vslideshow">
+
+    <!-- Slide 1: Trading Mesin CNC -->
+    <div class="vslide active" id="vs-0">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-01.jpg');background-position:50% 50%"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-building-factory-2"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-building-factory-2" style="font-size:10px"></i> JUAL BELI</div>
+        <div class="vslide-title">Trading Mesin CNC<br>Baru & Bekas</div>
+        <div class="vslide-desc">Jual beli mesin CNC baru & bekas — CNC Milling, Turning, Router, Plasma Cutting. Semua unit lolos inspeksi teknis dengan garansi resmi.</div>
+        <button class="vslide-cta" onclick="openModal(1)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 2: Retrofit CNC -->
+    <div class="vslide" id="vs-1">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-02.jpg');background-position:49% 42%"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-refresh"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-refresh" style="font-size:10px"></i> LAYANAN UNGGULAN</div>
+        <div class="vslide-title">Retrofit CNC<br>Upgrade ke Syntec Terbaru</div>
+        <div class="vslide-desc">Upgrade sistem lama ke Syntec terbaru. Ganti controller, servo motor & sistem elektrik. Akurasi tinggi, antarmuka modern, biaya hemat.</div>
+        <button class="vslide-cta" onclick="openModal(0)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 3: Perbaikan & Servis -->
+    <div class="vslide" id="vs-2">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-03.jpg');background-position:7% 15%"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-tool"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-tool" style="font-size:10px"></i> PERBAIKAN</div>
+        <div class="vslide-title">Perbaikan & Servis<br>CNC Profesional</div>
+        <div class="vslide-desc">On-site maupun di workshop kami. Tim teknisi berpengalaman siap menangani kerusakan mesin CNC Anda dengan suku cadang original berkualitas.</div>
+        <button class="vslide-cta" onclick="openModal(2)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 4: Troubleshooting -->
+    <div class="vslide" id="vs-3">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-04.jpg');background-position: 30% 37%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-zoom-scan"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-zoom-scan" style="font-size:10px"></i> TROUBLESHOOTING</div>
+        <div class="vslide-title">Troubleshooting<br>Diagnosa Cepat & Tepat</div>
+        <div class="vslide-desc">Diagnosa cepat & penanganan tepat. Analisa error code, sistem servo, PLC, dan elektrik untuk menemukan akar masalah secara efisien.</div>
+        <button class="vslide-cta" onclick="openModal(3)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 5: Jual Sparepart -->
+    <div class="vslide" id="vs-4">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-05.jpg');background-position: 41% 49%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-package"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-package" style="font-size:10px"></i> SPAREPART</div>
+        <div class="vslide-title">Jual Sparepart<br>Original & Compatible</div>
+        <div class="vslide-desc">Original & compatible, ready stock. Syntec, Mitsubishi, Yaskawa, Delta, Panasonic — tersedia spare part CNC, servo driver, inverter, dan HMI.</div>
+        <button class="vslide-cta" onclick="openModal(4)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 6: SPM -->
+    <div class="vslide" id="vs-5">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-06.jpg');background-position: 35% 38%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-settings-2"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-settings-2" style="font-size:10px"></i> SPECIAL PURPOSE MACHINE</div>
+        <div class="vslide-title">SPM<br>Special Purpose Machine</div>
+        <div class="vslide-desc">Desain custom sesuai kebutuhan produksi Anda. Dari konsep, fabrikasi, integrasi PLC, hingga commissioning oleh engineer berpengalaman.</div>
+        <button class="vslide-cta" onclick="openModal(5)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 7: HMI Servo Inverter -->
+    <div class="vslide" id="vs-6">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-07.jpg');background-position: 26% 37%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-cpu"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-cpu" style="font-size:10px"></i> OTOMASI</div>
+        <div class="vslide-title">HMI · Servo · Inverter<br>Instalasi, Setting & Repair</div>
+        <div class="vslide-desc">Instalasi, setting & repair HMI, servo motor, servo driver, dan inverter dari berbagai brand industri. Teknisi bersertifikat siap membantu.</div>
+        <button class="vslide-cta" onclick="openModal(6)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 8: Training CNC -->
+    <div class="vslide" id="vs-7">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-08.jpg');background-position: 47% 29%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-school"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-school" style="font-size:10px"></i> PELATIHAN</div>
+        <div class="vslide-title">Training CNC<br>Operator & Teknisi</div>
+        <div class="vslide-desc">Pelatihan operator & teknisi CNC. Dasar-dasar CNC, G-code, controller Syntec, troubleshooting, dan perawatan mesin. Tersedia in-house & on-site.</div>
+        <button class="vslide-cta" onclick="openModal(7)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Slide 9: Vision Detector -->
+    <div class="vslide" id="vs-8">
+      <div class="vslide-imgbg" style="background-image:url('images/slideshow/slide-09.jpg');background-position: 8% 59%;"></div>
+      <div class="vslide-grad"></div>
+      <div class="vslide-accent"></div>
+      <div class="vslide-deco"><i class="ti ti-eye"></i></div>
+      <div class="vslide-body">
+        <div class="vslide-tag"><i class="ti ti-eye" style="font-size:10px"></i> MACHINE VISION</div>
+        <div class="vslide-title">Vision Detector<br>Sistem Penglihatan Mesin</div>
+        <div class="vslide-desc">Solusi vision system untuk inspeksi otomatis, deteksi cacat produk, barcode reading, dan quality control berbasis kamera industri & AI.</div>
+        <button class="vslide-cta" onclick="openModal(8)">Lihat Detail <i class="ti ti-arrow-right" style="font-size:11px"></i></button>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="vs-dots" id="vsDots"></div>
+    <button class="vs-arrow prev" onclick="vsPrev()"><i class="ti ti-chevron-left"></i></button>
+    <button class="vs-arrow next" onclick="vsNext()"><i class="ti ti-chevron-right"></i></button>
+    <div class="vslide-count" id="vsCount">01 / 09</div>
+    <div class="vs-progress" id="vsProgress" style="width:0%"></div>
+  </div>
+  <!-- ===== END SLIDESHOW ===== -->
+
+  <div class="section-accent"></div>
+
+  <!-- LAYANAN -->
+  <div class="section">
+    <div class="eyebrow"><div class="eline"></div><span>LAYANAN</span></div>
+    <div class="sec-title">Klik layanan untuk detail lengkap</div>
+    <div class="sec-desc">Pilih layanan di bawah untuk melihat deskripsi, fitur, dan informasi lengkap.</div>
+    <div class="svc-layout">
+      <div class="svc-grid" id="svcGrid"></div>
+      <div class="svc-photo-frame" id="svcPhotoFrame">
+        <div class="svc-photo-frame-bg" id="framePreviewBg"></div>
+        <div class="svc-photo-frame-overlay"></div>
+        <div class="svc-photo-frame-inner">
+          <div class="svc-photo-frame-icon"><i class="ti ti-photo"></i></div>
+          <div class="svc-photo-frame-lbl">Tambahkan foto<br>slide di sini</div>
+          <div class="svc-photo-frame-hint">Klik untuk upload</div>
+        </div>
+        <div class="svc-photo-frame-default-label">
+          <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,0.9);font-family:var(--font-cond);letter-spacing:1px;margin-bottom:4px">HOVER UNTUK PREVIEW</div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:0.5px">Arahkan ke layanan di kiri</div>
+        </div>
+        <div class="svc-photo-frame-label-preview" id="framePreviewLabel">
+          <div class="svc-photo-frame-preview-title" id="framePreviewTitle"></div>
+          <div class="svc-photo-frame-preview-sub" id="framePreviewSub"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DRIVER -->
+  <div class="driver-section">
+    <div class="eyebrow"><div class="eline"></div><span>PERBAIKAN & SPAREPART DRIVER</span></div>
+    <div class="sec-title" style="font-size:15px;margin-bottom:14px">Brand yang kami layani</div>
+    <div class="driver-track-wrap">
+      <div class="driver-track" id="driverTrack">
+        <!-- set 1 -->
+        <div class="driver-card" onclick="openDriverModal(0)">
+          <div class="driver-logo"><img src="images/drivers/logo-syntec.png" alt="Syntec" /></div>
+          <div class="driver-sub">CNC Controller</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(1)">
+          <div class="driver-logo"><img src="images/drivers/logo-szgh.png" alt="SZGH"/></div>
+          <div class="driver-sub">CNC Controller</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(2)">
+          <div class="driver-logo"><img src="images/drivers/logo-mitsubishi.png" alt="Mitsubishi Electric"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(3)">
+          <div class="driver-logo"><img src="images/drivers/logo-yaskawa.png" alt="Yaskawa"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(5)">
+          <div class="driver-logo"><img src="images/drivers/logo-panasonic.png" alt="Panasonic"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(6)">
+          <div class="driver-logo"><img src="images/drivers/logo-maxsine.png" alt="Maxsine"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(4)">
+          <div class="driver-logo"><img src="images/drivers/logo-delta.png" alt="Delta Electronics"/></div>
+          <div class="driver-sub">Inverter</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <!-- set 2 (duplikat untuk loop mulus) -->
+        <div class="driver-card" onclick="openDriverModal(0)">
+          <div class="driver-logo"><img src="images/drivers/logo-syntec.png" alt="Syntec"/> </div>
+          <div class="driver-sub">CNC Controller</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(1)">
+          <div class="driver-logo"><img src="images/drivers/logo-szgh.png" alt="SZGH"/></div>
+          <div class="driver-sub">CNC Controller</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(2)">
+          <div class="driver-logo"><img src="images/drivers/logo-mitsubishi.png" alt="Mitsubishi Electric"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(3)">
+          <div class="driver-logo"><img src="images/drivers/logo-yaskawa.png" alt="Yaskawa"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(5)">
+          <div class="driver-logo"><img src="images/drivers/logo-panasonic.png" alt="Panasonic"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(6)">
+          <div class="driver-logo"><img src="images/drivers/logo-maxsine.png" alt="Maxsine"/></div>
+          <div class="driver-sub">Servo Driver</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+        <div class="driver-card" onclick="openDriverModal(4)">
+          <div class="driver-logo"><img src="images/drivers/logo-delta.png" alt="Delta Electronics"/></div>
+          <div class="driver-sub">Inverter</div>
+          <div class="driver-hint"><i class="ti ti-zoom-in" style="font-size:9px"></i> Lihat produk</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact-section">
+    <div class="eyebrow"><div class="eline"></div><span>KONTAK</span></div>
+    <div class="sec-title" style="font-size:15px;margin-bottom:14px">Hubungi kami sekarang</div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch">
+
+      <!-- BINGKAI KIRI: info kontak -->
+      <div style="background:linear-gradient(135deg,#0b1e38 0%,#0f2744 60%,#152f55 100%);border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden">
+        <!-- FOTO HEADER -->
+        <div style="position:relative;width:100%;height:88px;overflow:hidden;flex-shrink:0">
+          <img id="contactProfilePhoto"
+               src="images/contact-header.jpg"
+               alt="Dynamix Photo"
+               style="width:100%;height:100%;object-fit:cover;object-position:center;display:block"/>
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,15,30,0.15) 0%,rgba(5,15,30,0.82) 100%)"></div>
+          <!-- nama + role overlay di atas foto -->
+          <div style="position:absolute;bottom:10px;left:13px;right:13px;z-index:2">
+           <div style="font-size:13px;font-weight:800;color:#fff;font-family:var(--font-cond);letter-spacing:0.8px;line-height:1.2;text-shadow:0 1px 6px rgba(0,0,0,0.6)">Dynami<span style="background:linear-gradient(90deg,#60A5FA 50%,#ff7a00 50%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;">x</span> Vision Automation</div>
+            <div style="font-size:9px;color:rgba(255,255,255,0.7);margin-top:3px;display:flex;align-items:center;gap:5px;flex-wrap:wrap">
+              <span style="width:3px;height:3px;border-radius:50%;background:var(--blue2);display:inline-block;flex-shrink:0"></span>CNC &amp; Automation Specialist
+              <span style="width:3px;height:3px;border-radius:50%;background:var(--blue2);display:inline-block;flex-shrink:0"></span>Nanggerang, Bogor
+            </div>
+          </div>
+          <!-- badge pojok kanan atas -->
+          <div style="position:absolute;top:9px;right:10px;background:var(--blue);border-radius:4px;padding:3px 8px;font-size:8px;font-weight:700;color:#fff;font-family:var(--font-cond);letter-spacing:1px">VERIFIED</div>
+        </div>
+
+        <div style="padding:10px 15px;display:flex;flex-direction:column;gap:6px">
+
+          <div style="display:none"></div>
+
+          <!-- stats -->
+          <div style="display:flex;border:1px solid rgba(255,255,255,0.08);border-radius:8px;overflow:hidden;background:rgba(0,0,0,0.2)" id="statsBox">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;padding:5px 4px;border-right:1px solid rgba(255,255,255,0.07)">
+              <div style="font-size:16px;font-weight:800;color:var(--blue2);font-family:var(--font-cond);line-height:1" id="statProyek">0</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">Proyek</div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;padding:5px 4px;border-right:1px solid rgba(255,255,255,0.07)">
+              <div style="font-size:16px;font-weight:800;color:var(--blue2);font-family:var(--font-cond);line-height:1" id="statTahun">0</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">Tahun</div>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;padding:5px 4px">
+              <div style="font-size:16px;font-weight:800;color:var(--blue2);font-family:var(--font-cond);line-height:1" id="statBrand">0</div>
+              <div style="font-size:8px;color:rgba(255,255,255,0.4);margin-top:2px">Brand</div>
+            </div>
+          </div>
+
+          <!-- kontak rows -->
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:5px 9px">
+              <div style="width:22px;height:22px;border-radius:5px;background:rgba(29,111,216,0.25);display:flex;align-items:center;justify-content:center;color:#7db9ff;font-size:11px;flex-shrink:0"><i class="ti ti-brand-whatsapp"></i></div>
+              <div><div style="font-size:7.5px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;text-transform:uppercase">WhatsApp</div><div style="font-size:10px;font-weight:600;color:#e0eaff;margin-top:1px">0898-555-1050</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:5px 9px">
+              <div style="width:22px;height:22px;border-radius:5px;background:rgba(29,111,216,0.25);display:flex;align-items:center;justify-content:center;color:#7db9ff;font-size:11px;flex-shrink:0"><i class="ti ti-mail"></i></div>
+              <div><div style="font-size:7.5px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;text-transform:uppercase">Email</div><div style="font-size:9px;font-weight:600;color:#e0eaff;margin-top:1px">dynamicvisionautomation@gmail.com</div></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:5px 9px">
+              <div style="width:22px;height:22px;border-radius:5px;background:rgba(29,111,216,0.25);display:flex;align-items:center;justify-content:center;color:#7db9ff;font-size:11px;flex-shrink:0"><i class="ti ti-map-pin"></i></div>
+              <div><div style="font-size:7.5px;color:rgba(255,255,255,0.35);letter-spacing:0.5px;text-transform:uppercase">Lokasi</div><div style="font-size:10px;font-weight:600;color:#e0eaff;margin-top:1px">Nanggerang, Bogor, Jawa Barat</div></div>
+            </div>
+          </div>
+
+          <!-- buttons -->
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <button onclick="window.open('https://wa.me/6289855551050?text=Halo%20Dynamix%2C%20saya%20ingin%20konsultasi%20mengenai%20layanan%20CNC%20Anda.','_blank')" style="background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;border:none;border-radius:7px;padding:7px;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;font-family:var(--font)"><i class="ti ti-brand-whatsapp" style="font-size:13px"></i> Chat WhatsApp Sekarang</button>
+            <button onclick="window.location.href='mailto:dynamicVisionAutomation@gmail.com?subject=Konsultasi%20Layanan%20CNC&body=Halo%20Dynamix%2C%20saya%20ingin%20bertanya%20mengenai%20layanan%20Anda.'" style="background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.12);border-radius:7px;padding:7px;font-size:11px;font-weight:600;cursor:pointer;font-family:var(--font);display:flex;align-items:center;justify-content:center;gap:6px"><i class="ti ti-mail"></i> Kirim Email</button>
+          </div>
+
+          <!-- jam operasional -->
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:7px;padding:5px 9px;display:flex;align-items:center;gap:8px">
+            <div style="width:22px;height:22px;border-radius:5px;background:rgba(29,111,216,0.25);display:flex;align-items:center;justify-content:center;color:#7db9ff;font-size:11px;flex-shrink:0"><i class="ti ti-clock"></i></div>
+            <div>
+              <div style="font-size:7.5px;color:rgba(255,255,255,0.4);letter-spacing:0.5px;text-transform:uppercase">Jam Operasional</div>
+              <div style="font-size:10px;font-weight:600;color:#e0eaff;margin-top:1px">Senin – Sabtu &nbsp;·&nbsp; 08.00 – 17.00 WIB</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BINGKAI KANAN: galeri foto slideshow -->
+      <div style="background:linear-gradient(135deg,#0b1e38 0%,#0f2744 60%,#152f55 100%);border:1px solid rgba(255,255,255,0.09);border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+        <div style="padding:10px 15px;display:flex;flex-direction:column;gap:7px;flex:1">
+          <div style="font-size:8px;letter-spacing:2px;color:rgba(255,255,255,0.35);font-family:var(--font-cond);font-weight:700;text-transform:uppercase;flex-shrink:0">Galeri Foto</div>
+
+          <div id="crSlideFrame" style="position:relative;border-radius:9px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);background:#050f1e;flex:1;min-height:0">
+            <img class="cr-slide-img active" src="images/gallery/4_Axis_Cutting_Trial.png" alt="4 Axis Cutting Trial" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Accuracy_Check.jpeg" alt="Accuracy Check" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Control_Repair.jpeg" alt="Control Repair" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Control_Retrofit.jpeg" alt="Control Retrofit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Machine_Retrofit.jpeg" alt="Machine Retrofit" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Machine_Calibration.jpeg" alt="Machine Calibration" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/New_Project_Wiring.jpeg" alt="New Project Wiring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Retrofit_Rewiring.jpeg" alt="Retrofit Rewiring" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Retrofit_6TA-E.jpeg" alt="Retrofit 6TA-E" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <img class="cr-slide-img" src="images/gallery/Set_Zero.png" alt="Set Zero" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 0.8s ease"/>
+            <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,0.65) 100%);z-index:1;pointer-events:none"></div>
+            <div style="position:absolute;bottom:8px;left:10px;right:10px;z-index:2;display:flex;align-items:center;justify-content:space-between">
+              <div id="crSlideLabel" style="font-size:9px;font-weight:700;color:rgba(255,255,255,0.85);font-family:var(--font-cond);letter-spacing:1px;text-transform:uppercase">Retrofit CNC</div>
+              <div id="crSlideDots" style="display:flex;gap:4px"></div>
+            </div>
+          </div>
+
+          <div style="font-size:9px;color:rgba(255,255,255,0.3);text-align:center;line-height:1.5">Dokumentasi proyek &amp; workshop Dynamix Vision Automation</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer-bar">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">DYNAMI<span>X</span> VISION AUTOMATION</div>
+        <div class="footer-brand-sub">NANGGERANG · BOGOR · JAWA BARAT</div>
+        <div class="footer-contacts">
+          <div class="footer-contact-row"><i class="ti ti-phone"></i> 0898-555-1050</div>
+          <div class="footer-contact-row"><i class="ti ti-mail"></i> dynamicvisionautomation@gmail.com</div>
+          <div class="footer-contact-row"><i class="ti ti-map-pin"></i> Nanggerang, Bogor, Jawa Barat</div>
+        </div>
+      </div>
+      <div class="footer-right"></div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-copy">© 2026 Dynamix Vision Automation. All rights reserved.</div>
+  </div>
+
+</div><!-- end .site -->
+
+<!-- DRIVER MODAL -->
+<div class="dmodal-backdrop" id="dmodalBackdrop" onclick="closeDModal(event)">
+  <div class="dmodal">
+    <div class="dmodal-img">
+      <img id="dmodalImg" src="" alt=""/>
+      <div class="dmodal-img-overlay"></div>
+      <button class="dmodal-close" onclick="closeDModalNow()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="dmodal-body">
+      <div class="dmodal-tag" id="dmodalTag"></div>
+      <div class="dmodal-title" id="dmodalTitle"></div>
+      <div class="dmodal-sub" id="dmodalSub"></div>
+      <div class="dmodal-feats" id="dmodalFeats"></div>
+      <button class="dmodal-wa" onclick="window.open('https://wa.me/6289855551050','_blank')"><i class="ti ti-brand-whatsapp" style="font-size:15px"></i> Tanya Stok & Harga via WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModal(event)">
+  <div class="modal">
+    <div class="modal-img-wrap">
+      <div class="modal-img" id="modalImg"></div>
+      <button class="modal-close-x" onclick="closeModalNow()"><i class="ti ti-x"></i></button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tag" id="modalTag"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-desc" id="modalDesc"></div>
+      <div class="modal-features" id="modalFeats"></div>
+      <div class="modal-actions">
+        <button class="modal-wa" onclick="window.open('https://wa.me/6289855551050','_blank')"><i class="ti ti-brand-whatsapp" style="font-size:15px"></i> Tanya via WhatsApp</button>
+        <button class="modal-close-btn" onclick="closeModalNow()">Tutup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Image Position Editor — Dynamix</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f5f5f3;color:#1a1a1a;min-height:100vh;padding:20px}
+h1{font-size:18px;font-weight:500;margin-bottom:16px;color:#1a1a1a}
+h1 span{font-size:13px;font-weight:400;color:#888;margin-left:8px}
+.mode-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.mode-label{font-size:12px;color:#888}
+.mbtn{font-size:11px;padding:4px 10px;border-radius:8px;border:0.5px solid #ccc;background:#fff;color:#555;cursor:pointer;transition:background .15s,color .15s}
+.mbtn:hover{background:#f0f0f0;color:#1a1a1a}
+.mbtn.on{background:#dbeafe;color:#1d4ed8;border-color:#93c5fd}
+.editor{display:grid;grid-template-columns:1fr 200px;gap:12px;align-items:start}
+@media(max-width:580px){.editor{grid-template-columns:1fr}}
+.pbox{position:relative;border-radius:12px;overflow:hidden;background:#111;border:0.5px solid #ccc;cursor:grab;user-select:none;transition:height .2s}
+.pbox.dragging{cursor:grabbing}
+.pbox img{display:block;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#f9f9f7}
+.empty i{font-size:36px;color:#bbb}
+.empty span{font-size:13px;color:#888}
+.empty label{font-size:12px;padding:6px 14px;border-radius:8px;border:0.5px solid #ccc;cursor:pointer;background:#fff;color:#1a1a1a}
+.empty label:hover{background:#f0f0f0}
+.hint{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);font-size:11px;background:rgba(0,0,0,.6);color:#fff;padding:4px 10px;border-radius:20px;pointer-events:none;white-space:nowrap;opacity:0;transition:opacity .3s}
+.hint.show{opacity:1}
+.panel{display:flex;flex-direction:column;gap:10px}
+.card{background:#fff;border-radius:12px;padding:12px;border:0.5px solid #e0e0e0}
+.ctitle{font-size:11px;color:#888;margin-bottom:8px;letter-spacing:.3px;text-transform:uppercase}
+.vrow{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.vrow .lbl{font-size:12px;color:#888}
+.vrow .num{font-size:13px;font-weight:500;color:#1a1a1a;min-width:36px;text-align:right}
+input[type=range]{width:100%;margin-bottom:10px;accent-color:#1d4ed8}
+.code-box{background:#f5f5f3;border:0.5px solid #ddd;border-radius:6px;padding:8px;font-size:11px;font-family:monospace;color:#1a1a1a;word-break:break-all;line-height:1.6;margin-bottom:6px}
+.cbtn{width:100%;font-size:12px;padding:7px;border-radius:8px;border:0.5px solid #ccc;background:#fff;color:#1a1a1a;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.cbtn:hover{background:#dbeafe;color:#1d4ed8;border-color:#93c5fd}
+.rbtn{width:100%;font-size:11px;padding:5px;border-radius:8px;border:0.5px solid #ddd;background:transparent;color:#888;cursor:pointer;margin-top:6px}
+.rbtn:hover{background:#f5f5f3}
+.tip{font-size:11px;color:#aaa;line-height:1.5;margin-top:6px}
+.ul-label{display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;color:#888}
+.ul-label:hover{color:#1a1a1a}
+.badge{display:inline-block;font-size:10px;padding:2px 7px;border-radius:20px;background:#dbeafe;color:#1d4ed8;margin-left:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<h1>Image Position Editor <span>— Dynamix Tool</span></h1>
+
+<div class="mode-row">
+  <span class="mode-label">Ukuran preview:</span>
+  <button class="mbtn on" data-h="260">Bebas</button>
+  <button class="mbtn" data-h="310">Slideshow</button>
+  <button class="mbtn" data-h="280">Layanan</button>
+  <button class="mbtn" data-h="90">Header Kontak</button>
+  <button class="mbtn" data-h="170">Galeri</button>
+</div>
+
+<div class="editor">
+  <div class="pbox" id="pbox" style="height:260px">
+    <img id="img" src="" style="display:none;object-position:50% 50%"/>
+    <div class="empty" id="empty">
+      <i class="ti ti-photo-up"></i>
+      <span>Upload foto untuk mulai</span>
+      <label>
+        <i class="ti ti-folder-open" style="font-size:14px;vertical-align:-2px;margin-right:4px"></i>Pilih Foto
+        <input type="file" accept="image/*" id="fileInput" style="display:none"/>
+      </label>
+    </div>
+    <div class="hint" id="hint"><i class="ti ti-hand-move" style="font-size:12px;vertical-align:-1px"></i> Drag untuk geser</div>
+  </div>
+
+  <div class="panel">
+    <div class="card">
+      <div class="ctitle">Posisi Foto</div>
+      <div class="vrow">
+        <span class="lbl"><i class="ti ti-arrows-horizontal" style="font-size:14px;vertical-align:-2px;margin-right:4px"></i>Horizontal</span>
+        <span class="num" id="xNum">50%</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" step="1" id="xSlider"/>
+      <div class="vrow">
+        <span class="lbl"><i class="ti ti-arrows-vertical" style="font-size:14px;vertical-align:-2px;margin-right:4px"></i>Vertikal</span>
+        <span class="num" id="yNum">50%</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" step="1" id="ySlider"/>
+      <button class="rbtn" id="resetBtn"><i class="ti ti-refresh" style="font-size:13px;vertical-align:-2px;margin-right:4px"></i>Reset ke tengah</button>
+    </div>
+
+    <div class="card">
+      <div class="ctitle">Kode CSS</div>
+      <div class="code-box" id="codeBox">object-position: 50% 50%;</div>
+      <button class="cbtn" id="copyBtn"><i class="ti ti-copy" style="font-size:14px"></i> Copy CSS</button>
+      <p class="tip">Tempel ke style foto di HTML kamu.</p>
+    </div>
+
+    <div class="card">
+      <div class="ctitle">Ganti Foto</div>
+      <label class="ul-label">
+        <i class="ti ti-upload" style="font-size:14px"></i>
+        Upload foto lain
+        <input type="file" accept="image/*" id="fileInput2" style="display:none"/>
+      </label>
+    </div>
+
+    <div class="card">
+      <div class="ctitle">Cara Pakai</div>
+      <p style="font-size:11px;color:#888;line-height:1.7">
+        1. Upload foto<br>
+        2. Pilih mode preview sesuai bagian website<br>
+        3. <strong>Drag</strong> foto atau geser slider<br>
+        4. Copy CSS → tempel ke HTML
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+const pbox=document.getElementById('pbox');
+const img=document.getElementById('img');
+const empty=document.getElementById('empty');
+const hint=document.getElementById('hint');
+const xSlider=document.getElementById('xSlider');
+const ySlider=document.getElementById('ySlider');
+const xNum=document.getElementById('xNum');
+const yNum=document.getElementById('yNum');
+const codeBox=document.getElementById('codeBox');
+const copyBtn=document.getElementById('copyBtn');
+
+let px=50,py=50,loaded=false,dragging=false,sx=0,sy=0,spx=50,spy=50;
+
+function setPos(x,y){
+  px=Math.max(0,Math.min(100,x));
+  py=Math.max(0,Math.min(100,y));
+  img.style.objectPosition=px+'% '+py+'%';
+  xSlider.value=Math.round(px);
+  ySlider.value=Math.round(py);
+  xNum.textContent=Math.round(px)+'%';
+  yNum.textContent=Math.round(py)+'%';
+  codeBox.textContent='background-position: '+Math.round(px)+'% '+Math.round(py)+'%;';
+}
+
+function loadFile(file){
+  if(!file)return;
+  const url=URL.createObjectURL(file);
+  img.src=url;
+  img.style.display='block';
+  empty.style.display='none';
+  hint.classList.add('show');
+  loaded=true;
+  setPos(50,50);
+}
+
+document.getElementById('fileInput').addEventListener('change',e=>loadFile(e.target.files[0]));
+document.getElementById('fileInput2').addEventListener('change',e=>loadFile(e.target.files[0]));
+xSlider.addEventListener('input',()=>setPos(+xSlider.value,py));
+ySlider.addEventListener('input',()=>setPos(px,+ySlider.value));
+document.getElementById('resetBtn').addEventListener('click',()=>setPos(50,50));
+
+pbox.addEventListener('mousedown',e=>{
+  if(!loaded)return;
+  dragging=true;pbox.classList.add('dragging');
+  sx=e.clientX;sy=e.clientY;spx=px;spy=py;e.preventDefault();
+});
+document.addEventListener('mousemove',e=>{
+  if(!dragging)return;
+  const r=pbox.getBoundingClientRect();
+  setPos(spx-(e.clientX-sx)/r.width*100,spy-(e.clientY-sy)/r.height*100);
+});
+document.addEventListener('mouseup',()=>{dragging=false;pbox.classList.remove('dragging');});
+
+pbox.addEventListener('touchstart',e=>{
+  if(!loaded)return;
+  dragging=true;
+  sx=e.touches[0].clientX;sy=e.touches[0].clientY;spx=px;spy=py;
+},{passive:true});
+document.addEventListener('touchmove',e=>{
+  if(!dragging)return;
+  const r=pbox.getBoundingClientRect();
+  setPos(spx-(e.touches[0].clientX-sx)/r.width*100,spy-(e.touches[0].clientY-sy)/r.height*100);
+},{passive:true});
+document.addEventListener('touchend',()=>{dragging=false;});
+
+document.querySelectorAll('.mbtn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.mbtn').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+    pbox.style.height=btn.dataset.h+'px';
+  });
+});
+
+copyBtn.addEventListener('click',()=>{
+  navigator.clipboard.writeText(codeBox.textContent).then(()=>{
+    copyBtn.innerHTML='<i class="ti ti-check" style="font-size:14px"></i> Tersalin!';
+    setTimeout(()=>{copyBtn.innerHTML='<i class="ti ti-copy" style="font-size:14px"></i> Copy CSS';},2000);
+  }).catch(()=>{
+    const sel=window.getSelection();
+    const range=document.createRange();
+    range.selectNodeContents(codeBox);
+    sel.removeAllRanges();sel.addRange(range);
+    document.execCommand('copy');
+    copyBtn.innerHTML='<i class="ti ti-check" style="font-size:14px"></i> Tersalin!';
+    setTimeout(()=>{copyBtn.innerHTML='<i class="ti ti-copy" style="font-size:14px"></i> Copy CSS';},2000);
+  });
+});
+</script>
+</body>
+</html>

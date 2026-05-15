@@ -1,0 +1,112 @@
+================================================================
+  DAFTAR FILE FOTO — WEBSITE DYNAMIX
+  Total: 32 gambar + 5 logo brand
+================================================================
+
+
+[ ] LOGO NAVBAR (1 file)
+----------------------------------------------------------------
+  images/logo.png
+  → Logo di pojok kiri atas navbar
+
+
+[ ] SLIDESHOW UTAMA (10 foto)
+----------------------------------------------------------------
+  images/slideshow/slide-01.jpg   → Trading Mesin CNC
+  images/slideshow/slide-02.jpg   → Retrofit CNC
+  images/slideshow/slide-03.jpg   → Perbaikan & Servis
+  images/slideshow/slide-04.jpg   → Troubleshooting
+  images/slideshow/slide-05.jpg   → Jual Sparepart
+  images/slideshow/slide-06.jpg   → SPM (Special Purpose Machine)
+  images/slideshow/slide-07.jpg   → HMI · Servo · Inverter
+  images/slideshow/slide-08.jpg   → Training CNC
+  images/slideshow/slide-09.jpg   → Vision Detector
+  images/slideshow/slide-10.jpg   → Workshop & Tim Teknisi
+
+
+[ ] KARTU LAYANAN / MODAL (9 foto)
+----------------------------------------------------------------
+  images/services/retrofit.jpg        → Retrofit CNC
+  images/services/trading.jpg         → Trading Mesin CNC
+  images/services/servis.jpg          → Perbaikan & Servis
+  images/services/troubleshoot.jpg    → Troubleshooting
+  images/services/sparepart.jpg       → Jual Sparepart
+  images/services/spm.jpg             → Special Purpose Machine
+  images/services/hmi.jpg             → HMI · Servo · Inverter
+  images/services/training.jpg        → Training CNC
+  images/services/vision.jpg          → Vision Detector
+
+
+[ ] MODAL BRAND DRIVER — FOTO (7 foto)
+----------------------------------------------------------------
+  images/drivers/syntec.jpg       → Syntec
+  images/drivers/szgh.jpg         → SZGH
+  images/drivers/mitsubishi.jpg   → Mitsubishi Electric
+  images/drivers/yaskawa.jpg      → Yaskawa
+  images/drivers/delta.jpg        → Delta Electronics
+  images/drivers/panasonic.jpg    → Panasonic
+  images/drivers/maxsine.jpg      → Maxsine
+
+
+[ ] LOGO BRAND DRIVER (5 logo — format PNG transparan)
+----------------------------------------------------------------
+  images/drivers/logo-syntec.png      → Logo Syntec
+  images/drivers/logo-mitsubishi.png  → Logo Mitsubishi Electric
+  images/drivers/logo-yaskawa.png     → Logo Yaskawa
+  images/drivers/logo-delta.png       → Logo Delta Electronics
+  images/drivers/logo-panasonic.png   → Logo Panasonic
+
+  Catatan: SZGH & Maxsine sudah pakai teks, tidak perlu file logo.
+
+
+[ ] GALERI KONTAK (5 foto)
+----------------------------------------------------------------
+  images/gallery/galeri-01.jpg   → Retrofit CNC
+  images/gallery/galeri-02.jpg   → Trading Mesin
+  images/gallery/galeri-03.jpg   → Servis & Perbaikan
+  images/gallery/galeri-04.jpg   → Sparepart Ready
+  images/gallery/galeri-05.jpg   → Vision Detector
+
+
+[ ] HEADER KONTAK (1 foto)
+----------------------------------------------------------------
+  images/contact-header.jpg
+  → Foto profil / kantor / workshop untuk banner kontak
+
+
+================================================================
+  STRUKTUR FOLDER DI GITHUB
+================================================================
+
+  repo/
+  ├── index.html
+  └── images/
+      ├── logo.png
+      ├── contact-header.jpg
+      ├── slideshow/
+      │   ├── slide-01.jpg
+      │   ├── slide-02.jpg
+      │   └── ... (sampai slide-10.jpg)
+      ├── services/
+      │   ├── retrofit.jpg
+      │   ├── trading.jpg
+      │   └── ... (9 file)
+      ├── drivers/
+      │   ├── syntec.jpg
+      │   ├── logo-syntec.png
+      │   └── ... (12 file)
+      └── gallery/
+          ├── galeri-01.jpg
+          └── ... (5 file)
+
+
+================================================================
+  TIPS NAMA FILE
+================================================================
+
+  - Huruf kecil semua         : logo.png BUKAN Logo.PNG
+  - Gunakan tanda hubung (-)  : slide-01.jpg BUKAN slide 01.jpg
+  - Tidak ada spasi           : sparepart.jpg BUKAN spare part.jpg
+  - Format foto               : .jpg untuk foto, .png untuk logo
+
+================================================================
